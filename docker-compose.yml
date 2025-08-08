@@ -1,0 +1,23 @@
+
+version: "3.8"
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: volsurface
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  web:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/volsurface
+    depends_on:
+      - db
+    ports:
+      - "8501:8501"
+volumes:
+  pgdata:

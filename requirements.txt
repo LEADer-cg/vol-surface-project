@@ -1,0 +1,13 @@
+streamlit
+pandas
+numpy
+scipy
+yfinance
+SQLAlchemy
+psycopg2-binary
+streamlit
+plotly
+apscheduler
+python-dotenv
+pytest
+requests
